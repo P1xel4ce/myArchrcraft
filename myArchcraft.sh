@@ -64,3 +64,13 @@ sudo cp etc/intel-undervolt.conf /etc/
 ##SDDM##
 sudo cp -r usr/sddm/Backgrounds/ /usr/share/sddm/themes/archcraft/
 sudo cp usr/sddm/theme.conf /usr/share/sddm/themes/archcraft/
+
+##Aplica o undervolt##
+sudo intel-undervolt apply
+sudo systemctl enable intel-undervolt.service
+
+##Aplica a config Grub##
+sudo update-grub
+
+##Reinicia##
+reboot
