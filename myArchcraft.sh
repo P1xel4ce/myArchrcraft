@@ -1,7 +1,11 @@
 #!/bin/bash
 ##PixelAce
 
-##Desinstala Apps##
+##Update System##
+sudo pacman -Syu --noconfirm
+sudo pacman -Syy --noconfirm
+
+##Uninstall Apps##
 echo '
 archcraft-help
 archcraft-about
@@ -19,11 +23,7 @@ gparted' > removeApps.txt
 
 sudo pacman -Rns --noconfirm - < removeApps.txt
 
-##Atualiza o Sistema##
-sudo pacman -Syu --noconfirm
-sudo pacman -Syy --noconfirm
-
-##Instala Apps#
+##Install Apps#
 echo '
 archcraft-i3wm
 nvidia-utils
@@ -48,30 +48,30 @@ fish' > installApps.txt
 
 sudo pacman -S --noconfirm - < installApps.txt
 
-##Dotfiles##
+##.config##
 cp -r Dotfiles/i3/ /home/$USER/.config/			#Polybar/Wallpaper/Alacritty/Rofi
 cp -r Dotfiles/MangoHud/ /home/$USER/.config/	#Mangohud
 
-##Icons##
+##.icons##
 cp -r icons/default/ /home/$USER/.icons/		#Tema do mouse
 
-## /etc ##
+##/etc##
 sudo cp -r etc/default/ /etc/					#Grub
 sudo cp -r etc/optimus-manager/ /etc/			#Optimus Manager
 sudo cp -r etc/sddm.conf.d/ /etc/				#Tema do mouse do Sddm
-sudo cp -r etc/x11/ /etc/						#Inverte scroll touchpad
+sudo cp -r etc/x11/ /etc/						#Inverte scroll touchpad %%%%%%%%%%%
 sudo cp etc/intel-undervolt.conf /etc/			#Intel undervolt
 
 ##SDDM##
 sudo cp -r usr/sddm/Backgrounds/ /usr/share/sddm/themes/archcraft/	#Wallpaper Sddm
 sudo cp usr/sddm/theme.conf /usr/share/sddm/themes/archcraft/		#Configura Sddm
 
-##Aplica o undervolt##
+##Apply undervolt##
 sudo intel-undervolt apply						
 sudo systemctl enable intel-undervolt.service	
 
-##Aplica a config Grub##
+##Apply grub config##
 sudo update-grub
 
-##Reinicia##
+##Reboot system##
 reboot
