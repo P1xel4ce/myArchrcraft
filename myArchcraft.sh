@@ -1,4 +1,6 @@
 #!/bin/bash
+
+##MyArchcraft##
 ##PixelAce
 
 ##Update System##
@@ -49,8 +51,8 @@ fish' > installApps.txt
 sudo pacman -S --noconfirm - < installApps.txt
 
 ##.config##
-cp -r Dotfiles/i3/ /home/$USER/.config/			#Polybar/Wallpaper/Alacritty/Rofi
-cp -r Dotfiles/MangoHud/ /home/$USER/.config/	#Mangohud
+cp -r config/i3/ /home/$USER/.config/			#Polybar/Wallpaper/Alacritty/Rofi
+cp -r config/MangoHud/ /home/$USER/.config/	#Mangohud
 
 ##.icons##
 cp -r icons/default/ /home/$USER/.icons/		#Tema do mouse
