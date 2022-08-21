@@ -7,23 +7,23 @@
 sudo pacman -Syu --noconfirm
 sudo pacman -Syy --noconfirm
 
-##Uninstall Apps##
-echo '
-archcraft-help
-archcraft-about
-archcraft-openbox
-xarchiver
-gpick
-meld
-nitrogen
-plank
-atril
-baobab
-xfce4-terminal
-timeshift
-gparted' > removeApps.txt
+#####Uninstall Apps##
+##echo '
+##archcraft-help
+##archcraft-about
+##archcraft-openbox
+##xarchiver
+##gpick
+##meld
+##nitrogen
+##plank
+##atril
+##baobab
+##xfce4-terminal
+##timeshift
+####gparted' > removeApps.txt
 
-sudo pacman -Rns --noconfirm - < removeApps.txt
+##sudo pacman -Rns --noconfirm - < removeApps.txt
 
 ##Install Apps#
 echo '
@@ -52,16 +52,16 @@ sudo pacman -S --noconfirm - < installApps.txt
 
 ##.config##
 cp -r config/i3/ /home/$USER/.config/			#Polybar/Wallpaper/Alacritty/Rofi
-cp -r config/MangoHud/ /home/$USER/.config/	#Mangohud
+cp -r config/MangoHud/ /home/$USER/.config/		#Mangohud
 
 ##.icons##
 cp -r icons/default/ /home/$USER/.icons/		#Tema do mouse
 
 ##/etc##
-sudo cp -r etc/default/ /etc/					#Grub
+#sudo cp -r etc/default/ /etc/					#Grub
 sudo cp -r etc/optimus-manager/ /etc/			#Optimus Manager
 sudo cp -r etc/sddm.conf.d/ /etc/				#Tema do mouse do Sddm
-sudo cp -r etc/x11/ /etc/						#Inverte scroll touchpad %%%%%%%%%%%
+sudo cp -r etc/x11/ /etc/						#Inverte scroll touchpad 
 sudo cp etc/intel-undervolt.conf /etc/			#Intel undervolt
 
 ##SDDM##
@@ -73,7 +73,7 @@ sudo intel-undervolt apply
 sudo systemctl enable intel-undervolt.service	
 
 ##Apply grub config##
-sudo update-grub
+#sudo update-grub
 
 ##Reboot system##
-reboot
+#reboot
